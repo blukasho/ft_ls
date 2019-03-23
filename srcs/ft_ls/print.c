@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 22:14:01 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/23 23:00:20 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@ void	start_print_result(t_ft_ls_data *data, char *dir)
 	if (data->R)
 		ft_printf("Print recursively.\n");
 	else
-	{
-		ft_printf("Standart output.\n");
 		ft_standart_ountput(dir);
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:10:02 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 22:35:09 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/23 23:00:20 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int					main(int argc, char **argv)
 	if((data = ft_read_args(argc, argv)))
 	{
 		tmp = data->dirs;
-		ft_printf("Read OK.\n");
 		while (data->dirs)
 		{
 			start_print_result(data, data->dirs->dir);

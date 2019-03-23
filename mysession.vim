@@ -55,7 +55,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +30 Makefile
-badd +15 includes/ft_ls.h
+badd +46 includes/ft_ls.h
 badd +20 srcs/ft_ls/ft_ls.c
 badd +1 includes/ft_printf.h
 badd +1 srcs/ft_printf/ft_printf.c
@@ -67,11 +67,12 @@ badd +10 srcs/ft_ls/open.c
 badd +1 srcs/ft_ls/read_args.c
 badd +1 includes/libft.h
 badd +35 srcs/ft_ls/init_structs.c
-badd +17 srcs/ft_ls/error.c
+badd +23 srcs/ft_ls/error.c
 badd +1 srcs/ft_ls/clear.c
 badd +1 srcs/ft_ls/usage.c
-badd +0 srcs/ft_ls/print.c
-badd +0 srcs/ft_ls/standart_output.c
+badd +1 srcs/ft_ls/print.c
+badd +16 srcs/ft_ls/standart_output.c
+badd +1 ~/.bashrc
 argglobal
 silent! argdel *
 argadd Makefile
@@ -314,13 +315,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 25) / 50)
+let s:l = 25 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 05|
+25
+normal! 09|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 96 + 96) / 193)
 exe 'vert 2resize ' . ((&columns * 96 + 96) / 193)
 tabedit srcs/ft_ls/standart_output.c
@@ -444,12 +446,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 25) / 50)
+let s:l = 25 - ((24 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 020|
+25
+normal! 09|
 wincmd w
 argglobal
 edit srcs/ft_ls/print.c
@@ -561,11 +563,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 25) / 50)
+let s:l = 19 - ((18 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
+19
 normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 96 + 96) / 193)
@@ -685,11 +687,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 55 - ((38 * winheight(0) + 25) / 50)
+let s:l = 4 - ((3 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-55
+4
 normal! 05|
 tabedit includes/ft_ls.h
 set splitbelow splitright
@@ -938,7 +940,7 @@ normal! 024|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 96 + 96) / 193)
 exe 'vert 2resize ' . ((&columns * 96 + 96) / 193)
-tabnext 2
+tabnext 1
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
