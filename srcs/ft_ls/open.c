@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   open.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/23 13:10:02 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 17:47:26 by blukasho         ###   ########.fr       */
+/*   Created: 2019/03/23 14:15:57 by blukasho          #+#    #+#             */
+/*   Updated: 2019/03/23 15:53:41 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int					main(int argc, char **argv)
+void		ft_open_dir(char *path)
 {
-	t_ft_ls_data	*data;
-
-	--argc;
-	++argv;
-	if((data = ft_read_args(argc, argv)))
-		ft_printf("Read OK.\n");
+	DIR		*d;
+	
+	if (path)
+	{
+		d = opendir(path);
+		if (d)
+			ft_printf("dir %s\n", path);
+		else
+			ft_printf("ERROR");
+	}
 	else
-		print_usage();
-	return (0);
+	{
+		d = opendir(".");
+		if (d)
+			ft_printf("dir .\n");
+		else
+			ft_printf("ERROR");
+	}
+	if (d)
+		ft_printf("%d\n", d);
 }
