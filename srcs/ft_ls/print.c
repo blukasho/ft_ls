@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open.c                                             :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/23 14:15:57 by blukasho          #+#    #+#             */
+/*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
 /*   Updated: 2019/03/23 22:14:01 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-DIR			*ft_open_dir(char *path)
+void	start_print_result(t_ft_ls_data *data, char *dir)
 {
-	DIR		*d;
-	
-	d = opendir(path);
-	return (d);
+	if (data->R)
+		ft_printf("Print recursively.\n");
+	else
+	{
+		ft_printf("Standart output.\n");
+		ft_standart_ountput(dir);
+	}
 }

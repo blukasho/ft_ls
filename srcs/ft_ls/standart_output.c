@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   open.c                                             :+:      :+:    :+:   */
+/*   standart_output.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/23 14:15:57 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 22:14:01 by blukasho         ###   ########.fr       */
+/*   Created: 2019/03/23 22:10:54 by blukasho          #+#    #+#             */
+/*   Updated: 2019/03/23 22:37:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-DIR			*ft_open_dir(char *path)
+int			ft_standart_ountput(char *dir)
 {
 	DIR		*d;
-	
-	d = opendir(path);
-	return (d);
+
+	d = ft_open_dir(dir);
+	if (d)
+	{
+		ft_printf("Open successfully.\n");
+		closedir(d);
+	}
+	else
+		return(error_no_such_file_of_dir(dir));
+	return (1);
 }

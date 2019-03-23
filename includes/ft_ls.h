@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 17:38:56 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/23 22:24:16 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,15 @@ t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
 int							ft_read_flags(char *flags, t_ft_ls_data *data);
+int							error_no_such_file_of_dir(char *dir);
 int							error_invalid_flag(char f);
+int							ft_standart_ountput(char *dir);
 
+void						start_print_result(t_ft_ls_data *data, char *dir);
 void						print_usage(void);
 void						clear_t_ft_ls_data(t_ft_ls_data *data);
 void						clear_t_ft_ls_dirs(t_ft_ls_dir *dirs);
-void						ft_open_dir(char *path);
+
+DIR							*ft_open_dir(char *path);
 
 #endif
