@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   standart_output.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/23 22:10:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/24 12:45:09 by blukasho         ###   ########.fr       */
+/*   Created: 2019/03/24 13:28:31 by blukasho          #+#    #+#             */
+/*   Updated: 2019/03/24 15:56:19 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int					ft_standart_ountput(char *dir)
+int			main(int argc, char **argv)
 {
-	DIR				*d;
-	struct dirent	*s;
+	int		i;
+	int		j;
+	char	*tmp;
 
-	d = ft_open_dir(dir);
-	if (d)
+	i = 0;
+	--argc;
+	++argv;
+	while (i < argc)
 	{
-		while ((s = readdir(d)))
-			ft_printf("%s\n", s->d_name);
-		closedir(d);
+		j = i + 1;
+		while (j < argc)
+		{
+			if (ft_strcmp(argv[i], argv[j]) > 0)
+			{
+				tmp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = tmp;
+			}
+			++j;
+		}
+		++i;
 	}
-	else
-		return(error_no_such_file_of_dir(dir));
-	return (1);
+	i = 0;
+	while (i < argc)
+		ft_printf("%s\n", argv[i++]);
+	return (0);
 }
