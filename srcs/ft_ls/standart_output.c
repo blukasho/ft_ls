@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 22:10:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/24 12:45:09 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/26 15:10:38 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int					ft_standart_ountput(char *dir)
 	if (d)
 	{
 		while ((s = readdir(d)))
+		{
 			ft_printf("%s\n", s->d_name);
+		}
 		closedir(d);
 	}
 	else

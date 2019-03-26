@@ -6,27 +6,27 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:26:05 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 15:51:17 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/26 13:49:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-t_ft_ls_dir			*get_t_ft_ls_dir(t_ft_ls_dir *dirs, char *s)
+t_ft_ls_file		*get_t_ft_ls_dir(t_ft_ls_file *files, char *s)
 {
-	t_ft_ls_dir		*new;
-	t_ft_ls_dir		*tmp;
+	t_ft_ls_file	*new;
+	t_ft_ls_file	*tmp;
 
-	new = (t_ft_ls_dir *)malloc(sizeof(t_ft_ls_dir));
-	ft_bzero(new, sizeof(t_ft_ls_dir));
-	new->dir = s;
-	if (dirs)
+	new = (t_ft_ls_file *)malloc(sizeof(t_ft_ls_file));
+	ft_bzero(new, sizeof(t_ft_ls_file));
+	new->filename = s;
+	if (files)
 	{
-		tmp = dirs;
+		tmp = files;
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = new;
-		return (dirs);
+		return (files);
 	}
 	else
 		return (new);
