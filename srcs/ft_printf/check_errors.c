@@ -6,13 +6,13 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:54:39 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/11 13:35:53 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:34:18 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int				check_errors(void)
+int		check_errors(void)
 {
 	if (g_data.width > 2147483646)
 		return (-1);
@@ -21,12 +21,17 @@ int				check_errors(void)
 	return (0);
 }
 
-int				check_exeption_double(long double d)
+int		ft_is_nan(t_double_res *d)
 {
-	__int128	a;
+	return ((d->b->e == MAX_EXP && d->b->m[62] == '1') ? 1 : 0);
+}
 
-	a = d;
-	d = d - a;
-	d *= 10;
-	return ((g_data.precision == 0 && !a && d == 5 ? 1 : 0));
+int		ft_is_pos_inf(t_double_res *d)
+{
+	return ((d->b->e == MAX_EXP && !(d->b->s) && d->b->m[62] == '0') ? 1 : 0);
+}
+
+int		ft_is_neg_inf(t_double_res *d)
+{
+	return ((d->b->e == MAX_EXP && (d->b->s) && d->b->m[62] == '0') ? 1 : 0);
 }

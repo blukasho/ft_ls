@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/08 09:46:35 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/11 19:58:36 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/29 17:12:37 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,8 @@ static void		get_specifier(const char **format)
 
 void			parse_format_specifiers(const char **format)
 {
-	g_data = (t_data) 
-	{{-1, -1, -1, -1, -1},
-	-1, -1, 0, -1, 1.0 / 0.0, -1.0 / 0.0,
-	{0}, 0, 0}; 
+	g_data = (t_data)
+	{{-1, -1, -1, -1, -1}, -1, -1, 0, -1};
 	parse_flags(format);
 	g_data.width = ft_atoi(*format);
 	if (g_data.width > -1)

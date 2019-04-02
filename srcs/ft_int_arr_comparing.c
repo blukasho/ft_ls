@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/18 18:07:58 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/19 12:37:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/30 16:44:33 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_int_arr_comparing(int *a, int *b, int a_len, int b_len)
 {
-	while (a[--a_len] == 0)
+	while (a_len && a[--a_len] == 0)
 		;
-	while (b[--b_len] == 0)
+	while (b_len && b[--b_len] == 0)
 		;
 	if (a_len > b_len)
 		return (1);

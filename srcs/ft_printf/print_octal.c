@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 09:53:49 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/11 13:35:53 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/25 09:33:28 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		print_3(char *s, int l, char c)
 
 static void		print_2(char *s, int l)
 {
-	char 		c;
+	char		c;
 
 	if (g_data.precision > -1 || g_data.flags[1] != '0')
 		c = ' ';

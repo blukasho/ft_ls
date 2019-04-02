@@ -6,20 +6,20 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 14:40:17 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/17 17:33:19 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/28 21:38:55 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static t_int_arr_mult	*init(int *a, int a_len, int b_len)
+static t_int_arr_mult	*init(int a_len, int b_len)
 {
 	t_int_arr_mult		*s;
 
 	s = (t_int_arr_mult *)malloc(sizeof(t_int_arr_mult));
 	ft_bzero(s, sizeof(t_int_arr_mult));
 	s->r_len = a_len + b_len + 2;
-	s->r = (int *)malloc(s->r_len *sizeof(int));
+	s->r = (int *)malloc(s->r_len * sizeof(int));
 	ft_bzero(s->r, s->r_len * sizeof(int));
 	return (s);
 }
@@ -28,7 +28,7 @@ t_int_arr_mult			*ft_int_arr_mult(int *a, int *b, int a_len, int b_len)
 {
 	t_int_arr_mult		*s;
 
-	s = init(a, a_len, b_len);
+	s = init(a_len, b_len);
 	while (a[--a_len] == 0)
 		;
 	while (b[--b_len] == 0)

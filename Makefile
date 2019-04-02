@@ -6,7 +6,7 @@
 #    By: blukasho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/31 12:56:17 by blukasho          #+#    #+#              #
-#*   Updated: 2019/03/23 22:14:00 by blukasho         ###   ########.fr       *#
+#*   Updated: 2019/03/30 16:56:50 by blukasho         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,48 +28,52 @@ SRCS = ft_bzero.c ft_memcpy.c ft_memset.c ft_memccpy.c ft_memmove.c \
 	   print_digits.c print_octal.c additional_functions.c\
 	   print_unsigned_digits.c print_hexdecimal.c print_double.c\
 	   print_percent.c print_string.c main_function.c check_errors.c\
-	   reverse_double.c additional_functions_1.c additional_functions_2.c\
-	   ft_int_arr_mult.c ft_int_arr_subtr.c ft_len_of_digit.c\
+	   additional_functions_1.c ft_int_arr_mult.c ft_int_arr_subtr.c\
 	   ft_sum_two_digits.c ft_pos_exp_of_digit.c ft_neg_exp_of_digit.c\
 	   ft_int_arr_comparing.c ft_print_int_arr.c additional_functions_double.c\
-	   open.c init_structs.c read_args.c error.c clear.c usage.c print.c\
-	   standart_output.c
+	   t_sum_two_digits_del.c check_period.c ft_sum.c ft_get_double_bits.c\
+	   ft_get_double_exp.c ft_get_double_man.c convert_double.c round_double.c\
+	   ft_print_double_bits.c ft_len_of_digit.c\
 
-vpath %.c srcs srcs/ft_printf srcs/ft_ls
-
-DIR_O = tmp
-
-OBJ = $(addprefix $(DIR_O)/,$(SRCS:.c=.o))
-
-FLAGS = -Wall -Wextra -g3 -I includes
-
-NAME = libft.a
+SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
+			 standart_output.c usage.c
 
 FT_LS = ft_ls
 
-all: $(DIR_O) $(NAME) $(FT_LS)
+vpath %.c srcs srcs/ft_printf srcs/ft_ls
 
-$(FT_LS): $(NAME) ft_ls.c
-	gcc $(FLAGS) srcs/ft_ls/ft_ls.c -o $(FT_LS) $(NAME)
+OBJ = $(SRCS:.c=.o)
 
-$(DIR_O):
-	mkdir -p tmp
+OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-$(NAME): $(OBJ)
-	ar -rv $(NAME) $^
-	ranlib $(NAME)
+FLAGS = -Wall -Wextra -Werror -I includes
 
-$(OBJ): $(DIR_O)/%.o: %.c
-	gcc -c $(FLAGS) $< -o $@
+FT_LS_MAIN = srcs/ft_ls/main.c
+
+LIBFT = libft.a
+
+all: $(FT_LS)
+
+$(FT_LS): $(LIBFT) $(FT_LS_MAIN)
+	gcc $(FLAGS) $(FT_LS_MAIN) $(LIBFT) -o $(FT_LS)
+
+$(LIBFT): $(OBJ) $(OBJ_LS)
+	ar -rv $(LIBFT) $^
+	ranlib $(LIBFT)
+
+$(OBJ_LS): %.o: %.c
+	gcc $(FLAGS) -c $< -o $@
+
+$(OBJ): %.o: %.c
+	gcc $(FLAGS) -c $< -o $@
 
 clean: 
-	rm -rf $(DIR_O)
+	rm -rf $(OBJ)
+	rm -rf $(OBJ_LS)
 
 fclean: clean
 	rm -rf $(FT_LS)
-	rm -rf $(NAME)
-	rm -rf a.out
-	rm -rf a.out.dSYM
+	rm -rf $(LIBFT)
 
 re:	fclean all
 

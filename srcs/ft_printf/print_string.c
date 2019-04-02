@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 09:52:13 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/12 10:33:14 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/29 17:09:26 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,6 @@ void			print_s(char *s)
 	else
 		while (*s && prs--)
 			ft_printf_put_char(*(s++));
-}
-
-void			double_to_string(long double d)
-{
-	__int128	li;
-
-	li = *(__int128 *)&d;
-	get_double_bits(li);
-	reverse_double(g_data.double_bit_mask);
-	g_data.double_sign = g_data.double_bit_mask[0];
-	get_double_exp();
 }
 
 void			print_string(va_list ap)

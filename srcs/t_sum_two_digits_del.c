@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   t_sum_two_digits_del.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/31 18:02:32 by blukasho          #+#    #+#             */
-/*   Updated: 2019/01/12 14:36:59 by blukasho         ###   ########.fr       */
+/*   Created: 2019/03/25 10:07:59 by blukasho          #+#    #+#             */
+/*   Updated: 2019/03/25 13:55:07 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/ft_printf.h"
 
-size_t		ft_strlen(const char *s)
+void	t_sum_two_digits_del(t_sum_two_digits *t)
 {
-	size_t len;
-
-	len = -1;
-	while (s[++len])
-		;
-	return (len);
+	ft_memdel((void **)&t->r);
+	ft_memdel((void **)&t);
 }

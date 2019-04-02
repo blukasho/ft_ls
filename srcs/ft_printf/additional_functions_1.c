@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 18:12:42 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/11 13:35:53 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/28 22:20:46 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,19 @@ void			print_precision_octal(int l)
 		ft_printf_put_char('0');
 }
 
-int				print_inf(char *s, long double d, int m)
+int				print_inf(t_double_res *d)
 {
-	if (_IS_POS_INF(d))
+	char		*s;
+
+	if (ft_is_pos_inf(d) || ft_is_neg_inf(d))
 	{
-		g_data.specifier == 'f' ? (s = "inf") : (s = "INF");
+		s = "inf";
+		if (g_data.specifier == 'F')
+			s = "INF";
 		if (g_data.flags[4] == '-')
 		{
-			if (g_data.flags[3] == '+' || m)
-				m == 1 ? ft_printf_put_char('-') : ft_printf_put_char('+');
+			if (g_data.flags[3] == '+' || d->b->s)
+				(d->b->s) ? ft_printf_put_char('-') : ft_printf_put_char('+');
 			ft_printf_put_str(s);
 			while ((g_data.width--) - 3 > 0)
 				ft_printf_put_char(' ');
@@ -59,21 +63,24 @@ int				print_inf(char *s, long double d, int m)
 		{
 			while ((g_data.width--) - 3 > 0)
 				ft_printf_put_char(' ');
-			if (g_data.flags[3] == '+' || m)
-				m == 1 ? ft_printf_put_char('-') : ft_printf_put_char('+');
+			if (g_data.flags[3] == '+' || d->b->s)
+				(d->b->s) ? ft_printf_put_char('-') : ft_printf_put_char('+');
 			ft_printf_put_str(s);
 		}
-		return (1);
 	}
-	return(0);
+	return (((ft_is_pos_inf(d) || ft_is_neg_inf(d)) ? 1 : 0));
 }
 
-int				print_nan(char *s, long double d)
+int				print_nan(t_double_res *d)
 {
-	if (!_IS_NAN(d))
-		return (((g_data.width = g_data.width - ft_strlen(s)) ? 0 : 0));
+	char		*s;
+
+	if (!ft_is_nan(d))
+		return (0);
+	else if (g_data.specifier == 'f')
+		s = "nan";
 	else
-		g_data.specifier == 'f' ? (s = "nan") : (s = "NAN");
+		s = "NAN";
 	if (g_data.flags[4] == '-')
 	{
 		ft_printf_put_str(s);

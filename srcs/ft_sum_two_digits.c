@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 15:38:43 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/16 14:54:59 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/03/26 18:27:57 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static t_sum_two_digits	*init(int *a, int a_len, int b_len)
 
 t_sum_two_digits		*ft_sum_two_digits(int *a, int *b, int a_len, int b_len)
 {
-	t_sum_two_digits    *s;
+	t_sum_two_digits	*s;
 
 	s = init(a, a_len, b_len);
 	while (s->i < b_len)
