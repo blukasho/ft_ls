@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/26 13:50:22 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/04 10:55:07 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void			add_dir(char *file, t_ft_ls_data *data)
 {
-	data->files = get_t_ft_ls_dir(data->files, file);
+	data->files = get_t_ft_ls_file(data->files, file);
 }
 
 int					ft_read_flags(char *flags, t_ft_ls_data *data)

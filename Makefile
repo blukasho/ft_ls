@@ -36,7 +36,7 @@ SRCS = ft_bzero.c ft_memcpy.c ft_memset.c ft_memccpy.c ft_memmove.c \
 	   ft_print_double_bits.c ft_len_of_digit.c\
 
 SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
-			 standart_output.c usage.c
+			 standart_output.c usage.c read_dir.c
 
 FT_LS = ft_ls
 
@@ -46,7 +46,7 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -I includes
+FLAGS = -Wall -Wextra -Werror -g3 -I includes
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 
@@ -72,6 +72,8 @@ clean:
 	rm -rf $(OBJ_LS)
 
 fclean: clean
+	rm -rf ft_ls
+	rm -rf ft_ls.dSYM
 	rm -rf $(FT_LS)
 	rm -rf $(LIBFT)
 
