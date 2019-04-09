@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/04 10:55:07 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/09 12:57:27 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int					ft_read_flags(char *flags, t_ft_ls_data *data)
 			else if (flags[i] == 't')
 				data->t = 1;
 			else if (flags[i] == 'R')
-				data->R = 1;
+				data->rr = 1;
 			else
 				return (error_invalid_flag(flags[i]));
 		}

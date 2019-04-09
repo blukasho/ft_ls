@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 12:06:31 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/08 16:36:21 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/09 14:57:28 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <time.h>
+#include <pwd.h>
+#include <grp.h>
 
 char			*filePermStr(mode_t perm, int flags)
 {
@@ -48,6 +50,16 @@ char			*filePermStr(mode_t perm, int flags)
 	return (str);
 }
 
+void				displayUserGroup(struct stat *sb)
+{
+	struct passwd	*user;
+	struct group	*group;
+
+	group = getgrgid(sb->st_gid);
+	user = getpwuid(sb->st_uid);
+	printf("User name %s, Group name %s\n", user->pw_name, group->gr_name);
+}
+
 void			displayStatInfo(struct stat *sb)
 {
 	printf("File type : ");
@@ -73,7 +85,7 @@ void			displayStatInfo(struct stat *sb)
 
 	printf("I-node number: %ld\n", (long) sb->st_ino);
 
-	printf("Mode: %lo (%s)\n", (unsigned long) sb->st_mode, filePermStr(sb->st_mode, 0));
+	printf("Mode: %lo (%s)\n", (unsigned long) sb->st_mode, filePermStr(sb->st_mode, FP_SPECIAL));
 
 	if (sb->st_mode & (S_ISUID | S_ISGID | S_ISVTX))
 		printf("Special bits set : %s%s%s\n",
@@ -84,6 +96,8 @@ void			displayStatInfo(struct stat *sb)
 	printf("Number of (hard) links: %ld\n", (long)sb->st_nlink);
 
 	printf("Ownership: UID=%ld GID=%ld\n", (long)sb->st_uid, (long)sb->st_gid);
+
+	displayUserGroup(sb);
 
 	if (S_ISCHR(sb->st_mode) || S_ISBLK(sb->st_mode))
 		printf("Device number (st_rdev) : major=%ld; minor=%ld\n",
