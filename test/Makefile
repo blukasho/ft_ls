@@ -6,12 +6,12 @@
 #    By: blukasho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 12:14:03 by blukasho          #+#    #+#              #
-#    Updated: 2019/04/08 16:37:57 by blukasho         ###   ########.fr        #
+#*   Updated: 2019/04/10 10:43:12 by blukasho         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	gcc -fsanitize=address -g3 test_lstat.c
+	gcc -fsanitize=address -g3 test_add_path.c ../libft.a
 	./a.out | cat -e
 
 fclean:

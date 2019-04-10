@@ -6,7 +6,7 @@
 #    By: blukasho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/31 12:56:17 by blukasho          #+#    #+#              #
-#*   Updated: 2019/03/30 16:56:50 by blukasho         ###   ########.fr       *#
+#*   Updated: 2019/04/10 17:53:18 by blukasho         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS = ft_bzero.c ft_memcpy.c ft_memset.c ft_memccpy.c ft_memmove.c \
 SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 standart_output.c usage.c read_dir.c read_file.c\
 			 parse_lstat_struct.c get_file_type.c get_file_permissions.c\
+			 add_path_to_file.c check_slash.c
 
 FT_LS = ft_ls
 
@@ -48,6 +49,7 @@ OBJ = $(SRCS:.c=.o)
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror -g3 -I includes
+#FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -I includes
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 
