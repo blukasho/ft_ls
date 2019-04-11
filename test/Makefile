@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 all:
-	gcc -fsanitize=address -g3 test_add_path.c ../libft.a
+	gcc -fsanitize=address -g3 test_sort_by_name.c ../libft.a
 	./a.out | cat -e
 
 fclean:

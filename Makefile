@@ -38,7 +38,8 @@ SRCS = ft_bzero.c ft_memcpy.c ft_memset.c ft_memccpy.c ft_memmove.c \
 SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 standart_output.c usage.c read_dir.c read_file.c\
 			 parse_lstat_struct.c get_file_type.c get_file_permissions.c\
-			 add_path_to_file.c check_slash.c
+			 add_path_to_file.c check_slash.c sort_by_name.c count_files.c\
+			 split_head_files.c split_other_files.c
 
 FT_LS = ft_ls
 
@@ -48,8 +49,8 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -g3 -I includes
-#FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -I includes
+#FLAGS = -Wall -Wextra -Werror -g3 -I includes
+FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -I includes
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 
