@@ -51,9 +51,9 @@ endif
 set shortmess=aoO
 badd +31 srcs/ft_ls/main.c
 badd +1 Makefile
-badd +35 includes/ft_ls.h
+badd +36 includes/ft_ls.h
 badd +1 srcs/ft_ls/standart_output.c
-badd +28 srcs/ft_ls/print.c
+badd +29 srcs/ft_ls/print.c
 badd +1 srcs/ft_ls/read_dir.c
 badd +40 srcs/ft_ls/parse_lstat_struct.c
 badd +48 srcs/ft_ls/read_args.c
@@ -61,8 +61,8 @@ badd +31 srcs/ft_ls/sort_by_name.c
 badd +18 srcs/ft_ls/count_files.c
 badd +15 srcs/ft_ls/split_head_files.c
 badd +15 srcs/ft_ls/split_other_files.c
-badd +0 srcs/ft_ls/read_file.c
-badd +0 srcs/ft_ls/clear.c
+badd +41 srcs/ft_ls/read_file.c
+badd +1 srcs/ft_ls/clear.c
 badd +14 srcs/ft_ls/get_file_type.c
 argglobal
 silent! argdel *
@@ -418,14 +418,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 22 - ((21 * winheight(0) + 35) / 70)
+let s:l = 23 - ((22 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
-normal! 0
+23
+normal! 010|
 wincmd w
-3wincmd w
 exe 'vert 1resize ' . ((&columns * 93 + 140) / 281)
 exe 'vert 2resize ' . ((&columns * 93 + 140) / 281)
 exe 'vert 3resize ' . ((&columns * 93 + 140) / 281)
@@ -547,12 +546,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 35) / 70)
+let s:l = 34 - ((33 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
-normal! 045|
+34
+normal! 021|
 wincmd w
 argglobal
 edit srcs/ft_ls/read_dir.c
@@ -1024,12 +1023,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 36 - ((28 * winheight(0) + 35) / 70)
+let s:l = 43 - ((35 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
-normal! 020|
+43
+normal! 0
 wincmd w
 argglobal
 edit Makefile
@@ -1147,7 +1146,7 @@ normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
 exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
-tabnext 1
+tabnext 2
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
