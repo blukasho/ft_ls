@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:54:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 17:10:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 18:54:48 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,9 @@ void				clear_t_print(t_print *p)
 		ft_memdel((void **)&p->p_filesize);
 	if (p->p_hardlinks)
 		ft_memdel((void **)&p->p_hardlinks);
+	if (p->p_username)
+		ft_memdel((void **)&p->p_username);
+	if (p->p_group)
+		ft_memdel((void **)&p->p_group);
 	ft_memdel((void **)&p);
 }

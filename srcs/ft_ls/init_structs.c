@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:26:05 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 17:10:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 18:55:29 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ t_print				*get_t_print(t_ft_ls_file *files)
 	res = (t_print *)malloc(sizeof(t_print));
 	res->p_filesize = get_p_filesize(files);
 	res->p_hardlinks = get_p_hardlinks(files);
+	res->p_username = get_p_username(files);
+	res->p_group = get_p_group(files);
 	return (res);
 }

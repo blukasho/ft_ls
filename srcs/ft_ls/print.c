@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 17:14:43 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 18:56:36 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void		print_files(t_ft_ls_file *files)
 	while (files)
 	{
 		ft_printf("%c", files->filetype);
-		ft_printf("%s ", files->permissions);
+		ft_printf("%s  ", files->permissions);
 		ft_printf(p->p_hardlinks, files->hardlinks);
-		ft_printf("%s ", files->username);
-		ft_printf("%s ", files->groupname);
+		ft_printf(p->p_username, files->username);
+		ft_printf(p->p_group, files->groupname);
 		ft_printf(p->p_filesize, files->filesize);
 		ft_printf("%.24s ", files->lastmod);
 		ft_printf("%s ", files->filename);
@@ -40,4 +40,5 @@ void		print_files(t_ft_ls_file *files)
 		ft_printf("\n");
 		files = files->next;
 	}
+	clear_t_print(p);
 }

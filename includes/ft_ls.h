@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 17:10:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 18:53:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct				s_print
 {
 	char					*p_hardlinks;
 	char					*p_filesize;
+	char					*p_username;
+	char					*p_group;
 }							t_print;
 
 unsigned char				get_file_type(struct stat *sb);
@@ -63,6 +65,8 @@ char						*add_path_to_file(char *path, char *file);
 char						*get_file_permissions(mode_t perm);
 char						*get_p_filesize(t_ft_ls_file *files);
 char						*get_p_hardlinks(t_ft_ls_file *files);
+char						*get_p_username(t_ft_ls_file *files);
+char						*get_p_group(t_ft_ls_file *files);
 
 size_t						count_files(t_ft_ls_file *files);
 
@@ -92,6 +96,7 @@ void						start_print_result(t_ft_ls_data *data, char *file);
 void						print_usage(void);
 void						clear_t_ft_ls_data(t_ft_ls_data *data);
 void						clear_t_ft_ls_files(t_ft_ls_file *files);
+void						clear_t_print(t_print *p);
 
 DIR							*ft_open_dir(char *path);
 
