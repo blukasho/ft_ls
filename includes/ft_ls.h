@@ -6,18 +6,20 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/11 18:09:21 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 12:20:21 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
 # define PERM_SIZE sizeof("rwxrwxrwx")
+# define LINK_FILE PATH_MAX
 # include "libft.h"
 # include "ft_printf.h"
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <limits.h>
 # include <dirent.h>
 # include <time.h>
 # include <grp.h>
@@ -25,6 +27,8 @@
 
 typedef struct				s_ft_ls_file
 {
+	char					*link_file;
+	char					*full_filename;
 	char					*filename;
 	char					*permissions;
 	long					hardlinks;

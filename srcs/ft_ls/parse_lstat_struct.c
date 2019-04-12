@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/11 11:29:26 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 12:22:45 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,23 @@ static char			*get_lastmod(struct stat *sb)
 	return (ft_strdup(ctime(&sb->st_mtime)));
 }
 
+static char			*get_link_file(t_ft_ls_file *file)
+{
+	int				len;
+
+	file->link_file = ft_strnew(LINK_FILE);
+	len = readlink(file->full_filename, file->link_file, LINK_FILE - 1);
+	file->link_file[len] = '\0';
+	return (file->link_file);
+}
+
 t_ft_ls_file		*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file)
 {
 	if (sb && file)
 	{
 		file->filetype = get_file_type(sb);
+		if (file->filetype == 'l')
+			file->link_file = get_link_file(file);
 		file->permissions = get_file_permissions(sb->st_mode);
 		file->hardlinks = (long)sb->st_nlink;
 		file->username = get_username(sb);

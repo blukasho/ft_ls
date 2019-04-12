@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 12:27:32 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/11 18:11:00 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 12:36:33 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_ft_ls_file		*sort_by_name(t_ft_ls_file *files)
 	t_ft_ls_file	*start;
 	size_t			i;
 
-	i = 0;
+	i = 1;
 	while (i && !(i = 0))
 		if (check_split(files) && ++i)
 			files = split_head_files(files);

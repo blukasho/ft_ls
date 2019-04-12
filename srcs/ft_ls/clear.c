@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:54:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/10 09:19:21 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 12:11:54 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void				clear_t_ft_ls_files(t_ft_ls_file *files)
 			ft_memdel((void **)&files->groupname);
 		if (files->lastmod)
 			ft_memdel((void **)&files->lastmod);
+		if (files->full_filename)
+			ft_memdel((void **)&files->full_filename);
 		ft_memdel((void **)&files);
 		files = tmp;
 	}

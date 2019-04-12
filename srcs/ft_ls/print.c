@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/11 11:29:00 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 12:23:52 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	print_files(t_ft_ls_file *files)
 {
 	while (files)
 	{
-		ft_printf("%ld ", files->inode);
+//		ft_printf("%ld ", files->inode);
 		ft_printf("%c", files->filetype);
 		ft_printf("%s ", files->permissions);
 		ft_printf("%ld ", files->hardlinks);
@@ -33,6 +33,8 @@ void	print_files(t_ft_ls_file *files)
 		ft_printf("%lld ", files->filesize);
 		ft_printf("%.24s ", files->lastmod);
 		ft_printf("%s ", files->filename);
+		if (files->filetype == 'l')
+			ft_printf("-> %s", files->link_file);
 		ft_printf("\n");
 		files = files->next;
 	}
