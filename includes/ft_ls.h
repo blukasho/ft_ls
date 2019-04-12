@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 12:20:21 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/12 17:10:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,22 @@ typedef struct				s_ft_ls_data
 	t_ft_ls_file			*files;
 }							t_ft_ls_data;
 
+typedef struct				s_print
+{
+	char					*p_hardlinks;
+	char					*p_filesize;
+}							t_print;
+
 unsigned char				get_file_type(struct stat *sb);
 
 char						*add_path_to_file(char *path, char *file);
 char						*get_file_permissions(mode_t perm);
+char						*get_p_filesize(t_ft_ls_file *files);
+char						*get_p_hardlinks(t_ft_ls_file *files);
 
 size_t						count_files(t_ft_ls_file *files);
+
+t_print						*get_t_print(t_ft_ls_file *files);
 
 t_ft_ls_file				*split_head_files(t_ft_ls_file *files);
 t_ft_ls_file				*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file);
