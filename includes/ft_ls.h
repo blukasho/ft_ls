@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 18:53:06 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/13 14:07:12 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 
 typedef struct				s_ft_ls_file
 {
+	long					major;
+	long					minor;
 	char					*link_file;
 	char					*full_filename;
 	char					*filename;
