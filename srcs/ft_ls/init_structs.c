@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:26:05 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 18:55:29 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/18 17:40:47 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ t_print				*get_t_print(t_ft_ls_file *files)
 	res->p_hardlinks = get_p_hardlinks(files);
 	res->p_username = get_p_username(files);
 	res->p_group = get_p_group(files);
+	res->p_major_minor = get_p_major_minor(files);
 	return (res);
 }

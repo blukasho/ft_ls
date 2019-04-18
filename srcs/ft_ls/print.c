@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/13 13:32:39 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/18 17:40:47 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void		print_files(t_ft_ls_file *files)
 		ft_printf(p->p_hardlinks, files->hardlinks);
 		ft_printf(p->p_username, files->username);
 		ft_printf(p->p_group, files->groupname);
-		ft_printf(p->p_filesize, files->filesize);
+		if (files->filetype == 'c' || files->filetype == 'b')
+			ft_printf(p->p_major_minor, files->major, files->minor);
+		else
+			ft_printf(p->p_filesize, files->filesize);
 		ft_printf("%.24s ", files->lastmod);
 		ft_printf("%s ", files->filename);
 		if (files->filetype == 'l')

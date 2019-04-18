@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/13 14:07:12 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/18 17:42:22 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct				s_print
 	char					*p_filesize;
 	char					*p_username;
 	char					*p_group;
+	char					*p_major_minor;
 }							t_print;
 
 unsigned char				get_file_type(struct stat *sb);
@@ -69,6 +70,7 @@ char						*get_p_filesize(t_ft_ls_file *files);
 char						*get_p_hardlinks(t_ft_ls_file *files);
 char						*get_p_username(t_ft_ls_file *files);
 char						*get_p_group(t_ft_ls_file *files);
+char						*get_p_major_minor(t_ft_ls_file *files);
 
 size_t						count_files(t_ft_ls_file *files);
 

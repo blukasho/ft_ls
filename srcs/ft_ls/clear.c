@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:54:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/13 13:32:39 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/18 17:56:01 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void				clear_t_print(t_print *p)
 		ft_memdel((void **)&p->p_username);
 	if (p->p_group)
 		ft_memdel((void **)&p->p_group);
+	if (p->p_major_minor)
+		ft_memdel((void **)&p->p_major_minor);
 	ft_memdel((void **)&p);
 }
