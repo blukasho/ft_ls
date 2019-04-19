@@ -15,5 +15,5 @@ all:
 	./a.out | cat -e
 
 fclean:
-	rm -rf a.out
+	rm -rf a.ou
 	rm -rf a.out.dSYM

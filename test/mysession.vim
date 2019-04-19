@@ -50,7 +50,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 Makefile
-badd +103 test_lstat.c
+badd +93 test_lstat.c
 argglobal
 silent! argdel *
 $argadd Makefile
@@ -172,12 +172,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 93 - ((43 * winheight(0) + 35) / 71)
+let s:l = 59 - ((5 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-93
-normal! 058|
+59
+normal! 032|
 wincmd w
 argglobal
 edit Makefile
@@ -286,13 +286,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 19 - ((18 * winheight(0) + 35) / 71)
+let s:l = 18 - ((17 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-19
-normal! 021|
+18
+normal! 015|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
 exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
 tabnext 1

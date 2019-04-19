@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_by_name.c                                     :+:      :+:    :+:   */
+/*   sort_by_time.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 12:27:32 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/19 17:02:01 by blukasho         ###   ########.fr       */
+/*   Created: 2019/04/19 16:47:01 by blukasho          #+#    #+#             */
+/*   Updated: 2019/04/19 17:06:00 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 static int			check_split(t_ft_ls_file *files)
 {
 	if (files && files->next)
-		if (ft_strcmp(files->filename, files->next->filename) > 0)
+		if (files->time_stamp < files->next->time_stamp)
 			return (1);
 	return (0);
 }
 
-t_ft_ls_file		*sort_by_name(t_ft_ls_file *files)
+t_ft_ls_file		*sort_by_time(t_ft_ls_file *files)
 {
 	t_ft_ls_file	*start;
 	size_t			i;
@@ -40,4 +40,4 @@ t_ft_ls_file		*sort_by_name(t_ft_ls_file *files)
 			}
 		}
 	return (files);
-}	
+}

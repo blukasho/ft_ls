@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/18 17:42:22 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/19 16:55:23 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct				s_ft_ls_file
 	long					inode;
 	long long				filesize;
 	char					*lastmod;
+	long					time_stamp;
 	unsigned char			filetype;
 	struct s_ft_ls_file		*next;
 }							t_ft_ls_file;
@@ -76,6 +77,9 @@ size_t						count_files(t_ft_ls_file *files);
 
 t_print						*get_t_print(t_ft_ls_file *files);
 
+t_ft_ls_file				*sort_by_time(t_ft_ls_file *files);
+t_ft_ls_file				*sort_by_name(t_ft_ls_file *files);
+t_ft_ls_file				*sort(t_ft_ls_file *file, t_ft_ls_data *data);
 t_ft_ls_file				*split_head_files(t_ft_ls_file *files);
 t_ft_ls_file				*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file);
 t_ft_ls_file				*read_file(char *file_name, char *path);
@@ -84,7 +88,6 @@ t_ft_ls_file				*add_file(t_ft_ls_file *files, char *file, char *path);
 t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
-t_ft_ls_file				*sort_by_name(t_ft_ls_file *files);
 
 int							check_slash(char *path);
 int							standart_output_file(t_ft_ls_data *data, char *file);

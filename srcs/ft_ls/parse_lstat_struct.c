@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/18 16:54:12 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/19 16:31:22 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ t_ft_ls_file		*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file)
 		file->inode = (long)sb->st_ino;
 		file->major = (long)major(sb->st_rdev);
 		file->minor = (long)minor(sb->st_rdev);
+		file->time_stamp = (long)sb->st_mtime;
 		return (file);
 	}
 	return (NULL);
