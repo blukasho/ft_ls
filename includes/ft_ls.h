@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/19 16:55:23 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/19 17:30:33 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ void						split_other_files(t_ft_ls_file *files);
 void						print_files(t_ft_ls_file *files);
 void						start_print_result(t_ft_ls_data *data, char *file);
 void						print_usage(void);
-void						clear_t_ft_ls_data(t_ft_ls_data *data);
+
+int							clear_t_ft_ls_data(t_ft_ls_data *data);
 void						clear_t_ft_ls_files(t_ft_ls_file *files);
 void						clear_t_print(t_print *p);
 
