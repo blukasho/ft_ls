@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/19 17:30:33 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/23 11:56:27 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
+int							is_dir(char *dirname);
+int							is_file(char *filename);
 int							check_slash(char *path);
 int							standart_output_file(t_ft_ls_data *data, char *file);
 int							standart_output_dir(t_ft_ls_data *data, char *dir);
@@ -102,8 +104,9 @@ void						print_files(t_ft_ls_file *files);
 void						start_print_result(t_ft_ls_data *data, char *file);
 void						print_usage(void);
 
-int							clear_t_ft_ls_data(t_ft_ls_data *data);
-void						clear_t_ft_ls_files(t_ft_ls_file *files);
+void						*preparate_files_to_output(t_ft_ls_file *files);
+void						*clear_t_ft_ls_data(t_ft_ls_data *data);
+void						*clear_t_ft_ls_files(t_ft_ls_file *files);
 void						clear_t_print(t_print *p);
 
 DIR							*ft_open_dir(char *path);

@@ -40,8 +40,9 @@ SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 parse_lstat_struct.c get_file_type.c get_file_permissions.c\
 			 add_path_to_file.c check_slash.c sort_by_name.c count_files.c\
 			 split_head_files.c split_other_files.c get_p_filesize.c\
-			 get_p_hardlinks.c get_p_username.c get_p_group.c\
-			 get_p_major_minor.c sort.c sort_by_time.c
+			 get_p_hardlinks.c get_p_username.c get_p_group.c is_dir.c\
+			 get_p_major_minor.c sort.c sort_by_time.c is_file.c\
+			 preparate_files_to_output.c
 
 FT_LS = ft_ls
 

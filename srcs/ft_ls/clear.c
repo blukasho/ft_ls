@@ -6,13 +6,13 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:54:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/19 17:30:33 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/23 11:52:55 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-void				clear_t_ft_ls_files(t_ft_ls_file *files)
+void				*clear_t_ft_ls_files(t_ft_ls_file *files)
 {
 	t_ft_ls_file	*tmp;
 
@@ -35,14 +35,15 @@ void				clear_t_ft_ls_files(t_ft_ls_file *files)
 		ft_memdel((void **)&files);
 		files = tmp;
 	}
+	return (NULL);
 }
 
-int				clear_t_ft_ls_data(t_ft_ls_data *data)
+void				*clear_t_ft_ls_data(t_ft_ls_data *data)
 {
 	if (data->files)
 		clear_t_ft_ls_files(data->files);
 	ft_memdel((void **)&data);
-	return (0);
+	return (NULL);
 }
 
 void				clear_t_print(t_print *p)
