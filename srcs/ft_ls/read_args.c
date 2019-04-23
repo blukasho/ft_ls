@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/23 11:28:14 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/04/23 12:11:19 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,7 @@ t_ft_ls_data		*ft_read_args(int ar, char **av)
 	data = get_t_ft_ls_data();
 	while (++i < ar)
 		if (!ft_read_flags(av[i], data))
-		{
-			clear_t_ft_ls_data(data);
-			return (NULL);
-		}
+			return(clear_t_ft_ls_data(data));
 	if (!data->files)
 		ft_read_flags(".", data);
 	return (data);
