@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   print_long_format_dir.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 14:39:01 by blukasho         ###   ########.fr       */
+/*   Created: 2019/05/02 15:15:11 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/02 15:23:23 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-void	start_print_result(t_ft_ls_data *data, char *dir)
+int				print_long_format_dir(t_ft_ls_file *files)
 {
-	if (data->rr)
-		ft_printf("Print recursively.\n");
-	else
-		ft_standart_output(data, dir);
+	__int128	total;
+
+	total = get_total(files);
+	ft_printf("total %lld\n", total);
+	print_long_format_files(files);
+	return (0);
 }

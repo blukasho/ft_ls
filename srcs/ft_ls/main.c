@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:10:02 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/23 14:00:48 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/02 14:17:00 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,9 @@
 
 int					main(int argc, char **argv)
 {
-	t_ft_ls_data	*data;
-	t_ft_ls_file	*tmp;
-
 	--argc;
 	++argv;
-	if((data = ft_read_args(argc, argv)))
-	{
-		data->files = sort_by_name(data->files);
-		preparate_files_to_output(data->files);
-		tmp = data->files;
-		while (data->files)
-		{
-			start_print_result(data, data->files->filename);
-			data->files = data->files->next;
-		}
-		data->files = tmp;
-		clear_t_ft_ls_data(data);
-	}
-	else
-		print_usage();
+	ft_ls(argc, argv);
 //	system("leaks ft_ls");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/19 16:31:22 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/02 15:30:05 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_ft_ls_file		*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file)
 		file->username = get_username(sb);
 		file->groupname = get_groupname(sb);
 		file->filesize = (long long)sb->st_size;
+		file->blocks = (long long)sb->st_blocks;
 		file->lastmod = get_lastmod(sb);
 		file->inode = (long)sb->st_ino;
 		file->major = (long)major(sb->st_rdev);
