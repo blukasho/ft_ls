@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 17:33:56 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/03 14:33:33 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
+int							print_long_format_file(t_ft_ls_file *files, t_ft_ls_file *file);
 int							print_only_files(t_ft_ls_data *data);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);
