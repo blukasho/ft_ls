@@ -43,7 +43,7 @@ SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 get_p_hardlinks.c get_p_username.c get_p_group.c is_dir.c\
 			 get_p_major_minor.c sort.c sort_by_time.c is_file.c ft_ls.c\
 			 print_long_format_files.c print_long_format_dir.c total.c\
-			 sort_by_reverse.c
+			 sort_by_reverse.c check_permission_denied.c
 
 FT_LS = ft_ls
 

@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/03 18:32:33 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/06 12:03:58 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
+int							check_permission_denied(char *name);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);
 int							ft_ls(int argc, char **argv);
@@ -102,6 +103,7 @@ int							check_slash(char *path);
 int							standart_output_file(t_ft_ls_data *data, char *file);
 int							standart_output_dir(t_ft_ls_data *data, char *dir);
 int							ft_read_flags(char *flags, t_ft_ls_data *data);
+int							error_permission_denied(char *dir);
 int							error_no_such_file_of_dir(char *file);
 int							error_invalid_flag(char f);
 int							ft_standart_output(t_ft_ls_data *data, char *dir);
