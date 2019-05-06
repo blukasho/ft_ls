@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/06 12:03:58 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/06 14:54:23 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ t_ft_ls_data				*get_t_ft_ls_data(void);
 int							check_permission_denied(char *name);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);
+int							print_only_files(t_ft_ls_data *data);
 int							ft_ls(int argc, char **argv);
 int							is_dir(char *dirname);
 int							is_file(char *filename);
