@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:39:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/06 12:04:29 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/06 18:46:09 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		error_invalid_flag(char f)
 {
-	ft_printf("ft_ls: invalid option -- '%c'\n", f);
+	ft_printf("ft_ls: illegal option -- %c\n", f);
 	return (0);
 }
 

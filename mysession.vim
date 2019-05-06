@@ -50,7 +50,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 Makefile
-badd +102 includes/ft_ls.h
+badd +94 includes/ft_ls.h
 badd +30 srcs/ft_ls/ft_ls.c
 badd +17 srcs/ft_ls/print.c
 badd +27 srcs/ft_ls/standart_output.c
@@ -59,10 +59,13 @@ badd +38 srcs/ft_ls/read_file.c
 badd +31 srcs/ft_ls/parse_lstat_struct.c
 badd +62 srcs/ft_ls/get_file_permissions.c
 badd +16 srcs/ft_ls/get_file_type.c
-badd +28 srcs/ft_ls/error.c
-badd +0 srcs/ft_ls/print_only_files.c
-badd +1 srcs/ft_ls
-badd +0 srcs/ft_ls/main.c
+badd +16 srcs/ft_ls/error.c
+badd +30 srcs/ft_ls/print_only_files.c
+badd +17 srcs/ft_ls/main.c
+badd +1 ~/Documents/projects/ft_ls
+badd +51 srcs/ft_ls/read_args.c
+badd +35 includes/libft.h
+badd +13 test/delme.c
 argglobal
 silent! argdel *
 $argadd Makefile
@@ -77,8 +80,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 100 + 100) / 200)
-exe 'vert 2resize ' . ((&columns * 99 + 100) / 200)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -185,11 +188,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 44 - ((43 * winheight(0) + 35) / 70)
+let s:l = 30 - ((29 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-44
+30
 normal! 0
 wincmd w
 argglobal
@@ -299,17 +302,17 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 35 - ((34 * winheight(0) + 35) / 70)
+let s:l = 36 - ((35 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
+36
 normal! 0
 lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 100 + 100) / 200)
-exe 'vert 2resize ' . ((&columns * 99 + 100) / 200)
-tabedit ~/Documents/projects/ft_ls/srcs/ft_ls/main.c
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+tabedit ~/Documents/projects/ft_ls/srcs/ft_ls/read_args.c
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -421,12 +424,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 21 - ((20 * winheight(0) + 35) / 70)
+let s:l = 41 - ((40 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-21
-normal! 02|
+41
+normal! 09|
+lcd ~/Documents/projects/ft_ls
 tabedit ~/Documents/projects/ft_ls/includes/ft_ls.h
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -437,8 +441,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 100 + 100) / 200)
-exe 'vert 2resize ' . ((&columns * 99 + 100) / 200)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -545,12 +549,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 94 - ((51 * winheight(0) + 35) / 70)
+let s:l = 90 - ((37 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-94
+90
 normal! 052|
+lcd ~/Documents/projects/ft_ls
 wincmd w
 argglobal
 edit ~/Documents/projects/ft_ls/Makefile
@@ -665,9 +670,10 @@ exe s:l
 normal! zt
 46
 normal! 076|
+lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 100 + 100) / 200)
-exe 'vert 2resize ' . ((&columns * 99 + 100) / 200)
+exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
 tabnext 2
 set stal=1
 if exists('s:wipebuf')
