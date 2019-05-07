@@ -50,7 +50,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 Makefile
-badd +94 includes/ft_ls.h
+badd +85 includes/ft_ls.h
 badd +30 srcs/ft_ls/ft_ls.c
 badd +17 srcs/ft_ls/print.c
 badd +27 srcs/ft_ls/standart_output.c
@@ -80,8 +80,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
+exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -310,8 +310,8 @@ normal! zt
 normal! 0
 lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
+exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
 tabedit ~/Documents/projects/ft_ls/srcs/ft_ls/read_args.c
 set splitbelow splitright
 set nosplitbelow
@@ -424,12 +424,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 41 - ((40 * winheight(0) + 35) / 70)
+let s:l = 49 - ((48 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
-normal! 09|
+49
+normal! 0
 lcd ~/Documents/projects/ft_ls
 tabedit ~/Documents/projects/ft_ls/includes/ft_ls.h
 set splitbelow splitright
@@ -441,8 +441,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
+exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -549,11 +549,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 90 - ((37 * winheight(0) + 35) / 70)
+let s:l = 85 - ((32 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-90
+85
 normal! 052|
 lcd ~/Documents/projects/ft_ls
 wincmd w
@@ -672,8 +672,8 @@ normal! zt
 normal! 076|
 lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 89 + 89) / 179)
-exe 'vert 2resize ' . ((&columns * 89 + 89) / 179)
+exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
+exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
 tabnext 2
 set stal=1
 if exists('s:wipebuf')

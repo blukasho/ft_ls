@@ -6,15 +6,16 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/06 20:30:19 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/07 16:12:57 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-static void			add_dir(char *file, t_ft_ls_data *data)
+static t_ft_ls_data	*add_dir(char *file, t_ft_ls_data *data)
 {
 	data->files = get_t_ft_ls_file(data->files, file);
+	return (data);
 }
 
 int					ft_read_flags(char *flags, t_ft_ls_data *data)
@@ -52,13 +53,15 @@ t_ft_ls_data		*ft_read_args(int ar, char **av)
 
 	i = -1;
 	data = get_t_ft_ls_data();
-	if (av[0] && av[0][0] =='-' && !ft_read_flags(av[0], data))
+	if (*av && ar == 1 && !ft_strcmp(*av, "--"))
+		return(add_dir(".", data));
+	if (*av && !ft_read_flags(av[0], data))
 		return (clear_t_ft_ls_data(data));
 	else
 		++i;
 	while (++i < ar)
 		add_dir(av[i], data);
-	if (!data->files || !ft_strcmp(av[0], "--"))
+	if (!data->files)
 		ft_read_flags(".", data);
 	return (data);
 }
