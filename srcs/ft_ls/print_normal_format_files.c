@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_long_format_dir.c                            :+:      :+:    :+:   */
+/*   print_normal_format_files.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/02 15:15:11 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/07 16:42:18 by blukasho         ###   ########.fr       */
+/*   Created: 2019/05/07 17:13:54 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/07 17:21:23 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int				print_long_format_dir(t_ft_ls_file *files)
+int			print_normal_format_files(t_ft_ls_file *files)
 {
-	__int128	total;
-
-	if (files)
+	while (files)
 	{
-		total = get_total(files);
-		ft_printf("total %lld\n", total);
-		print_long_format_files(files);
+		ft_printf("%s", files->filename);
+		if (files->next)
+			ft_printf(" ");
+		files = files->next;
 	}
+	ft_printf("\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 13:59:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/06 16:00:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/07 17:56:00 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ int					ft_ls(int argc, char **argv)
 	{
 		data->files = sort(data->files, data);
 		print_error_files(data->files);
-		print_only_files(data); //
+		print_only_files(data); 
 		tmp = data->files;
 		while (data->files)
 		{
-			start_print_result(data, data->files->filename);
+//			start_print_result(data, data->files->filename);
+//			ft_printf("\n");
 			data->files = data->files->next;
 		}
 		data->files = tmp;

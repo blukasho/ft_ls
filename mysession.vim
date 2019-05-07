@@ -53,24 +53,28 @@ badd +1 Makefile
 badd +85 includes/ft_ls.h
 badd +30 srcs/ft_ls/ft_ls.c
 badd +17 srcs/ft_ls/print.c
-badd +27 srcs/ft_ls/standart_output.c
+badd +42 srcs/ft_ls/standart_output.c
 badd +19 srcs/ft_ls/check_permission_denied.c
-badd +38 srcs/ft_ls/read_file.c
-badd +31 srcs/ft_ls/parse_lstat_struct.c
+badd +39 srcs/ft_ls/read_file.c
+badd +46 srcs/ft_ls/parse_lstat_struct.c
 badd +62 srcs/ft_ls/get_file_permissions.c
 badd +16 srcs/ft_ls/get_file_type.c
 badd +16 srcs/ft_ls/error.c
-badd +30 srcs/ft_ls/print_only_files.c
-badd +17 srcs/ft_ls/main.c
+badd +22 srcs/ft_ls/print_only_files.c
+badd +21 srcs/ft_ls/main.c
 badd +1 ~/Documents/projects/ft_ls
-badd +51 srcs/ft_ls/read_args.c
+badd +3 srcs/ft_ls/read_args.c
 badd +35 includes/libft.h
 badd +13 test/delme.c
+badd +25 srcs/ft_ls/print_long_format_files.c
+badd +20 srcs/ft_ls/print_long_format_dir.c
+badd +24 srcs/ft_ls/print_normal_format_files.c
+badd +23 srcs/ft_ls/sort.c
 argglobal
 silent! argdel *
 $argadd Makefile
 set stal=2
-edit srcs/ft_ls/print_only_files.c
+edit srcs/ft_ls/read_file.c
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -80,8 +84,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
-exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
+exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
+exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -188,12 +192,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 35) / 70)
+let s:l = 22 - ((21 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
-normal! 0
+22
+normal! 08|
 wincmd w
 argglobal
 edit srcs/ft_ls/ft_ls.c
@@ -302,135 +306,17 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 36 - ((35 * winheight(0) + 35) / 70)
+let s:l = 39 - ((38 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
-normal! 0
+39
+normal! 032|
 lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
-exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
-tabedit ~/Documents/projects/ft_ls/srcs/ft_ls/read_args.c
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-argglobal
-setlocal noautoindent
-setlocal backupcopy=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'c'
-setlocal filetype=c
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=0
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=ccomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal signcolumn=auto
-setlocal smartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'c'
-setlocal syntax=c
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 49 - ((48 * winheight(0) + 35) / 70)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-49
-normal! 0
-lcd ~/Documents/projects/ft_ls
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
+exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
 tabedit ~/Documents/projects/ft_ls/includes/ft_ls.h
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -441,8 +327,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
-exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
+exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
+exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -549,12 +435,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 85 - ((32 * winheight(0) + 35) / 70)
+let s:l = 89 - ((35 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-85
-normal! 052|
+89
+normal! 035|
 lcd ~/Documents/projects/ft_ls
 wincmd w
 argglobal
@@ -664,17 +550,17 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 46 - ((25 * winheight(0) + 35) / 70)
+let s:l = 49 - ((28 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-46
-normal! 076|
+49
+normal! 013|
 lcd ~/Documents/projects/ft_ls
 wincmd w
-exe 'vert 1resize ' . ((&columns * 63 + 99) / 198)
-exe 'vert 2resize ' . ((&columns * 134 + 99) / 198)
-tabnext 2
+exe 'vert 1resize ' . ((&columns * 140 + 140) / 281)
+exe 'vert 2resize ' . ((&columns * 140 + 140) / 281)
+tabnext 1
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

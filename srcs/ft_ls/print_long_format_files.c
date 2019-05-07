@@ -6,15 +6,15 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 14:37:51 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 14:39:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/07 17:23:30 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int			print_long_format_files(t_ft_ls_file *files)
+int					print_long_format_files(t_ft_ls_file *files)
 {
-	t_print	*p;
+	t_print			*p;
 
 	p = get_t_print(files);
 	while (files)
@@ -29,9 +29,9 @@ int			print_long_format_files(t_ft_ls_file *files)
 		else
 			ft_printf(p->p_filesize, files->filesize);
 		ft_printf("%.24s ", files->lastmod);
-		ft_printf("%s ", files->filename);
+		ft_printf("%s", files->filename);
 		if (files->filetype == 'l')
-			ft_printf("-> %s", files->link_file);
+			ft_printf(" -> %s", files->link_file);
 		ft_printf("\n");
 		files = files->next;
 	}

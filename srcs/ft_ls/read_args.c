@@ -6,15 +6,37 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/07 16:12:57 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/07 17:44:29 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
+static t_ft_ls_file	*add_new_file(t_ft_ls_file *files, t_ft_ls_file *file)
+{
+	t_ft_ls_file	*tmp;
+
+	tmp = files;
+	if (tmp)
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = file;
+	}
+	else
+		return (file);
+	return (files);
+}
+
 static t_ft_ls_data	*add_dir(char *file, t_ft_ls_data *data)
 {
-	data->files = get_t_ft_ls_file(data->files, file);
+	t_ft_ls_file	*new_file;
+
+	new_file = read_file(file, NULL);
+	if (new_file)
+		data->files = add_new_file(data->files, new_file);
+	else
+		data->files = get_t_ft_ls_file(data->files, file);
 	return (data);
 }
 
