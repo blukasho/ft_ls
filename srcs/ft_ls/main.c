@@ -6,7 +6,7 @@
 /*  By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:10:02 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 17:06:00 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/09 18:41:20 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int					main(int argc, char **argv)
 	--argc;
 	++argv;
 	ft_ls(argc, argv);
-	system("leaks ft_ls");
+//	system("leaks ft_ls");
 	return (0);
 }
