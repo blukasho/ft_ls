@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 13:48:03 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 11:49:13 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/09 14:23:35 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,17 @@ int					print_only_files(t_ft_ls_data *data)
 
 	files = get_files(data);
 	if (files && data->l)
-		return (print_long_format_files(files));
+	{
+		print_long_format_files(files);
+		clear_t_ft_ls_files(files);
+		return (1);
+	}
 	else if (files)
-		return (print_normal_format_files(files));
+	{
+		print_normal_format_files(files);
+		clear_t_ft_ls_files(files);
+		return (1);
+	}
 	clear_t_ft_ls_files(files);
 	return (0);
 }
