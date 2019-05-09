@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/07 17:18:10 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/09 12:54:38 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,20 @@ t_ft_ls_file				*sort(t_ft_ls_file *file, t_ft_ls_data *data);
 t_ft_ls_file				*split_head_files(t_ft_ls_file *files);
 t_ft_ls_file				*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file);
 t_ft_ls_file				*read_file(char *file_name, char *path);
-t_ft_ls_file				*read_dir(DIR *d, char *path);
+t_ft_ls_file				*read_dir(DIR *d, char *path, t_ft_ls_data *data);
 t_ft_ls_file				*add_file(t_ft_ls_file *files, char *file, char *path);
 t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
+int							has_dir(t_ft_ls_file *files);
 int							check_permission_denied(char *name);
+int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files);
 int							print_normal_format_files(t_ft_ls_file *files);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);
 int							print_only_files(t_ft_ls_data *data);
+int							print(t_ft_ls_data *data);
 int							ft_ls(int argc, char **argv);
 int							is_dir(char *dirname);
 int							is_file(char *filename);
@@ -109,6 +112,7 @@ int							error_permission_denied(char *dir);
 int							error_no_such_file_of_dir(char *file);
 int							error_invalid_flag(char f);
 int							ft_standart_output(t_ft_ls_data *data, char *dir);
+int							clear_t_print(t_print *p);
 
 void						split_other_files(t_ft_ls_file *files);
 void						start_print_result(t_ft_ls_data *data, char *name);
@@ -116,7 +120,6 @@ void						print_usage(void);
 
 void						*clear_t_ft_ls_data(t_ft_ls_data *data);
 void						*clear_t_ft_ls_files(t_ft_ls_file *files);
-void						clear_t_print(t_print *p);
 
 DIR							*ft_open_dir(char *path);
 

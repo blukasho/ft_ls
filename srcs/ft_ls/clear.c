@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 16:54:41 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 14:13:42 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/09 11:49:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void				*clear_t_ft_ls_data(t_ft_ls_data *data)
 	return (NULL);
 }
 
-void				clear_t_print(t_print *p)
+int					clear_t_print(t_print *p)
 {
 	if (p->p_filesize)
 		ft_memdel((void **)&p->p_filesize);
@@ -59,4 +59,5 @@ void				clear_t_print(t_print *p)
 	if (p->p_major_minor)
 		ft_memdel((void **)&p->p_major_minor);
 	ft_memdel((void **)&p);
+	return (1);
 }

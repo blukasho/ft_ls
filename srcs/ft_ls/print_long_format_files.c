@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 14:37:51 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/07 17:23:30 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/09 11:49:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int					print_long_format_files(t_ft_ls_file *files)
 			ft_printf(" -> %s", files->link_file);
 		ft_printf("\n");
 		files = files->next;
+		if (!files)
+			return (clear_t_print(p));
 	}
-	clear_t_print(p);
 	return (0);
 }
