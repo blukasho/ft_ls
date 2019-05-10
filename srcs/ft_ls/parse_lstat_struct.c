@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 15:30:05 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/10 22:10:01 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,20 @@ static char			*get_groupname(struct stat *sb)
 
 static char			*get_lastmod(struct stat *sb)
 {
-	return (ft_strdup(ctime(&sb->st_mtime)));
+	long			curr_time;
+	char			*lastmod;
+	int				move;
+
+	lastmod = ft_strdup(ctime(&sb->st_mtime));
+	curr_time = (long)time(NULL);
+	move = (curr_time - (long)sb->st_mtime > HALF_YEAR ? 1 : 0);
+	ft_memmove(lastmod, lastmod + 4, ft_strlen(lastmod + 3));
+	lastmod[ft_strlen(lastmod) - 1] = '\0';
+	if (move)
+		ft_memmove(lastmod + 7, lastmod + 15, 6);
+	else
+		lastmod[12] = '\0';
+	return (lastmod);
 }
 
 static char			*get_link_file(t_ft_ls_file *file)

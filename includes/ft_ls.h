@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 12:54:38 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/10 21:23:24 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_LS_H
 # define PERM_SIZE sizeof("rwxrwxrwx")
 # define LINK_FILE PATH_MAX
+# define HALF_YEAR 15768000
 # include "libft.h"
 # include "ft_printf.h"
 # include <stdlib.h>
