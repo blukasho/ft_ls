@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 17:29:05 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/02 20:26:12 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/10 12:42:13 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_ft_ls_file		*sort_by_reverse(t_ft_ls_file *files)
 	t_ft_ls_file	*next;
 
 	curr = files;
+	files = NULL;
 	prev = NULL;
 	while (curr != NULL)
 	{
