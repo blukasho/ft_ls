@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/10 21:23:24 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/11 16:57:42 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct				s_ft_ls_data
 	int						r;
 	int						t;
 	int						rr;
+	int						print_dir_name;
 	t_ft_ls_file			*files;
 }							t_ft_ls_data;
 
@@ -96,7 +97,7 @@ t_ft_ls_data				*get_t_ft_ls_data(void);
 
 int							has_dir(t_ft_ls_file *files);
 int							check_permission_denied(char *name);
-int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files);
+int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files, char *dirname);
 int							print_normal_format_files(t_ft_ls_file *files);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);

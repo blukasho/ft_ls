@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 11:30:29 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 18:37:16 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/11 17:20:19 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,29 @@ static int	check_exep(t_ft_ls_data *data, t_ft_ls_file *files)
 	return (0);
 }
 
-int			print_dir(t_ft_ls_data *data, t_ft_ls_file *files)
+static int	check_exep_dir(char *dirname)
 {
+	if (!ft_strcmp(".", dirname))
+		return (1);
+	else if (!ft_strcmp("..", dirname))
+		return (1);
+	return (0);
+}
+
+int			print_dir(t_ft_ls_data *data, t_ft_ls_file *files, char *dirname)
+{
+	if (data->print_dir_name)
+		ft_printf("%s:\n", dirname);
 	if (files && data->l && !check_exep(data, files))
 		print_long_format_dir(files);
 	else if (files && !check_exep(data, files))
 		print_normal_format_files(files);
+	if (data->rr)
+		while (files)
+		{
+			if (files->filetype == 'd' && !check_exep_dir(files->filename))
+				standart_output_dir(data, files->full_filename);
+			files = files->next;
+		}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 22:10:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 12:54:38 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/11 16:57:42 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int					standart_output_dir(t_ft_ls_data *data, char *dir)
 	{
 		files = read_dir(d, dir, data);
 		files = sort(files, data);
-		print_dir(data, files);
+		print_dir(data, files, dir);
 		clear_t_ft_ls_files(files);
 		closedir(d);
 		return (1);
