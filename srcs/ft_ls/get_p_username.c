@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 18:41:48 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 18:57:21 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/13 10:49:47 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*get_p_username(t_ft_ls_file *files)
 	max_len = 0;
 	while (files)
 	{
-		if (ft_strlen(files->username) > max_len)
+		if (files->username && ft_strlen(files->username) > max_len)
 			max_len = ft_strlen(files->username);
 		files = files->next;
 	}

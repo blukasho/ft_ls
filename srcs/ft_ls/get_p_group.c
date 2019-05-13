@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/12 18:50:44 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/12 18:58:19 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/13 10:51:14 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*get_p_group(t_ft_ls_file *files)
 	max_len = 0;
 	while (files)
 	{
-		if (ft_strlen(files->groupname) > max_len)
+		if (files->groupname && ft_strlen(files->groupname) > max_len)
 			max_len = ft_strlen(files->groupname);
 		files = files->next;
 	}

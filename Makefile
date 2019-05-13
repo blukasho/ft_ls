@@ -6,7 +6,7 @@
 #    By: blukasho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/10/31 12:56:17 by blukasho          #+#    #+#              #
-#*   Updated: 2019/05/10 13:07:58 by blukasho         ###   ########.fr       *#
+#*   Updated: 2019/05/13 11:06:17 by blukasho         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,7 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -g3 -I includes
-#FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -I includes
+FLAGS = -Wall -Wextra -Werror -I includes #-g3 -fsanitize=address
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 

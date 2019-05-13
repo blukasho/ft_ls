@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/10 22:10:01 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/13 10:46:12 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ static char			*get_link_file(t_ft_ls_file *file)
 
 	file->link_file = ft_strnew(LINK_FILE);
 	len = readlink(file->full_filename, file->link_file, LINK_FILE - 1);
+	if (len == -1)
+	{
+		ft_memdel((void **)&(file->link_file));
+		return (NULL);
+	}
 	file->link_file[len] = '\0';
 	return (file->link_file);
 }
