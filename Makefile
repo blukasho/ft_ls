@@ -54,7 +54,7 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -I includes #-g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -I includes -g3 -fsanitize=address
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 

@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 21:40:37 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/11 18:24:34 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/15 15:48:18 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int				print(t_ft_ls_data *data)
 	{
 		if (data->files->filetype == 'd')
 		{
-			if (f || has_dir(data->files->next) || data->rr)
+			if (data->files->next)
 				data->print_dir_name = 1;
 			start_print_result(data, data->files->filename);
 			if (has_dir(data->files->next))
