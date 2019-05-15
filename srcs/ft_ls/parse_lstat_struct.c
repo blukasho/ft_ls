@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/13 10:46:12 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/15 19:13:11 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ static char			*get_username(struct stat *sb)
 	struct passwd	*user;
 
 	user = getpwuid(sb->st_uid);
-	return (ft_strdup(user->pw_name));
+	if (user)
+		return (ft_strdup(user->pw_name));
+	return (NULL);
 }
 
 static char			*get_groupname(struct stat *sb)
@@ -25,7 +27,9 @@ static char			*get_groupname(struct stat *sb)
 	struct group	*group;
 
 	group = getgrgid(sb->st_gid);
-	return (ft_strdup(group->gr_name));
+	if (group)
+		return (ft_strdup(group->gr_name));
+	return (NULL);
 }
 
 static char			*get_lastmod(struct stat *sb)
