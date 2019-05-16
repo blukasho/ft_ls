@@ -49,23 +49,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 Makefile
-badd +59 test_lstat.c
+badd +0 test_acl.c
+badd +0 Makefile
 argglobal
 silent! argdel *
-$argadd Makefile
-edit test_lstat.c
+$argadd test_acl.c
+set stal=2
+edit test_acl.c
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 191)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 191)
 argglobal
 setlocal noautoindent
 setlocal backupcopy=
@@ -172,15 +167,19 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 59 - ((5 * winheight(0) + 35) / 71)
+let s:l = 23 - ((22 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-59
-normal! 032|
-wincmd w
+23
+normal! 020|
+tabedit Makefile
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winminheight=1 winheight=1 winminwidth=1 winwidth=1
 argglobal
-edit Makefile
 setlocal noautoindent
 setlocal backupcopy=
 setlocal nobinary
@@ -286,17 +285,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 35) / 71)
+let s:l = 14 - ((13 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
-normal! 015|
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 95 + 95) / 191)
-exe 'vert 2resize ' . ((&columns * 95 + 95) / 191)
+14
+normal! 039|
 tabnext 1
+set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
