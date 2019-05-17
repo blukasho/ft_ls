@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:42:24 by blukasho          #+#    #+#             */
-/*   Updated: 2019/04/09 16:25:03 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/17 13:51:59 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static char	*get_xusr_perm(mode_t perm)
 	return ("");
 }
 
-char		*get_file_permissions(mode_t perm)
+char		*get_file_permissions(mode_t perm, t_ft_ls_file *file)
 {
 	char	*p;
 
@@ -83,5 +83,9 @@ char		*get_file_permissions(mode_t perm)
 	(perm & S_IROTH) ? ft_strcat(p, "r") : ft_strcat(p, "-");
 	(perm & S_IWOTH) ? ft_strcat(p, "w") : ft_strcat(p, "-");
 	ft_strcat(p, get_xoth_perm(perm));
+	if (check_acl(file->full_filename))
+		p[9] = '+';
+	if (check_ea(file->full_filename))
+		p[9] = '@';
 	return (p);
 }

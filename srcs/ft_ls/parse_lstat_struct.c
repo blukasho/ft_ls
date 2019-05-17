@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 14:05:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/15 19:13:11 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/17 13:21:45 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_ft_ls_file		*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file)
 		file->filetype = get_file_type(sb);
 		if (file->filetype == 'l')
 			file->link_file = get_link_file(file);
-		file->permissions = get_file_permissions(sb->st_mode);
+		file->permissions = get_file_permissions(sb->st_mode, file);
 		file->hardlinks = (long)sb->st_nlink;
 		file->username = get_username(sb);
 		file->groupname = get_groupname(sb);

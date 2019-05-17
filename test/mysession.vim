@@ -49,8 +49,8 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 test_acl.c
-badd +0 Makefile
+badd +1 test_acl.c
+badd +1 Makefile
 argglobal
 silent! argdel *
 $argadd test_acl.c
@@ -167,12 +167,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 23 - ((22 * winheight(0) + 35) / 70)
+let s:l = 28 - ((27 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-23
-normal! 020|
+28
+normal! 0
 tabedit Makefile
 set splitbelow splitright
 set nosplitbelow
@@ -285,12 +285,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 35) / 70)
+let s:l = 12 - ((11 * winheight(0) + 35) / 70)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 039|
+12
+normal! 0
 tabnext 1
 set stal=1
 if exists('s:wipebuf')

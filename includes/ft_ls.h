@@ -6,20 +6,22 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/13 10:36:45 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/17 13:46:45 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS_H
 # define FT_LS_H
-# define PERM_SIZE sizeof("rwxrwxrwx")
+# define PERM_SIZE sizeof("rwxrwxrwx  ")
 # define LINK_FILE PATH_MAX
 # define HALF_YEAR 15768000
 # include "libft.h"
 # include "ft_printf.h"
 # include <stdlib.h>
 # include <sys/types.h>
+# include <sys/xattr.h>
 # include <sys/stat.h>
+# include <sys/acl.h>
 # include <limits.h>
 # include <dirent.h>
 # include <time.h>
@@ -69,7 +71,7 @@ typedef struct				s_print
 unsigned char				get_file_type(struct stat *sb);
 
 char						*add_path_to_file(char *path, char *file);
-char						*get_file_permissions(mode_t perm);
+char						*get_file_permissions(mode_t perm, t_ft_ls_file *file);
 char						*get_p_filesize(t_ft_ls_file *files);
 char						*get_p_hardlinks(t_ft_ls_file *files);
 char						*get_p_username(t_ft_ls_file *files);
@@ -95,6 +97,8 @@ t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
+int							check_ea(char *filename);
+int							check_acl(char *filename);
 int							has_dir(t_ft_ls_file *files);
 int							check_permission_denied(char *name);
 int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files, char *dirname);

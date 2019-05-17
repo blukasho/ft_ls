@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 all:
-	gcc -fsanitize=address -g3 test_acl.c ../libft.a
+	gcc test_acl.c ../libft.a
 	./a.out | cat -e
 
 fclean:

@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_acl.c                                         :+:      :+:    :+:   */
+/*   check_acl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/16 17:47:26 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/17 12:52:52 by blukasho         ###   ########.fr       */
+/*   Created: 2019/05/17 13:01:10 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/17 13:09:11 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include "../includes/libft.h"
-#include <sys/types.h>
-#include <sys/acl.h>
+#include "../includes/ft_ls.h"
 
-int			main(void)
+int		check_acl(char *f)
 {
-	char	*file;
-	acl_t	acl;
-
-	file = "c";
-	acl = acl_get_file(file, ACL_TYPE_EXTENDED);
-	if (acl)
-		ft_printf("OK\n");
-	else
-		ft_printf("ERROR\n");
-	system("leaks a.out");
+	if (acl_get_file(f, ACL_TYPE_EXTENDED) || acl_get_file(f, ACL_TYPE_DEFAULT))
+		return (1);
 	return (0);
 }
