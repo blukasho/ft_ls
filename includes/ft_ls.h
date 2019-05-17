@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/17 13:46:45 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/17 18:00:49 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <sys/types.h>
 # include <sys/xattr.h>
 # include <sys/stat.h>
-# include <sys/acl.h>
+//# include <sys/acl.h>
 # include <limits.h>
 # include <dirent.h>
 # include <time.h>
@@ -97,8 +97,8 @@ t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
 
-int							check_ea(char *filename);
-int							check_acl(char *filename);
+//int							check_ea(char *filename);
+//int							check_acl(char *filename);
 int							has_dir(t_ft_ls_file *files);
 int							check_permission_denied(char *name);
 int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files, char *dirname);

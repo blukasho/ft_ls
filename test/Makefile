@@ -6,12 +6,12 @@
 #    By: blukasho <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/08 12:14:03 by blukasho          #+#    #+#              #
-#*   Updated: 2019/04/13 10:40:10 by blukasho         ###   ########.fr       *#
+#*   Updated: 2019/05/17 17:48:01 by blukasho         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 all:
-	gcc test_acl.c ../libft.a
+	gcc test_acl.c
 	./a.out | cat -e
 
 fclean:
