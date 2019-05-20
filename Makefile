@@ -44,7 +44,7 @@ SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 get_p_major_minor.c sort.c sort_by_time.c is_file.c ft_ls.c\
 			 print_long_format_files.c print_long_format_dir.c total.c\
 			 sort_by_reverse.c check_permission_denied.c print_only_files.c\
-			 print_normal_format_files.c print_dir.c has_dir.c #check_ea.c\
+			 print_normal_format_files.c print_dir.c has_dir.c check_ea.c\
 			 check_acl.c
 			 
 
@@ -56,7 +56,7 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -I includes -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -I includes# -g3 -fsanitize=address
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 
