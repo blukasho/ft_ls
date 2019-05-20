@@ -49,11 +49,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 srcs/ft_ls/check_acl.c
+badd +0 srcs/ft_ls/ft_ls.c
 argglobal
 silent! argdel *
-$argadd srcs/ft_ls/check_acl.c
-edit srcs/ft_ls/check_acl.c
+$argadd srcs/ft_ls/ft_ls.c
+edit srcs/ft_ls/ft_ls.c
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -170,7 +170,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 20
-normal! 018|
+normal! 023|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

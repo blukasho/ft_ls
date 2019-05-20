@@ -56,7 +56,7 @@ OBJ = $(SRCS:.c=.o)
 
 OBJ_LS = $(SRCS_FT_LS:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror -I includes# -g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -I includes
 
 FT_LS_MAIN = srcs/ft_ls/main.c
 
@@ -82,8 +82,6 @@ clean:
 	rm -rf $(OBJ_LS)
 
 fclean: clean
-	rm -rf ft_ls
-	rm -rf ft_ls.dSYM
 	rm -rf $(FT_LS)
 	rm -rf $(LIBFT)
 
