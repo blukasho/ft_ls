@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 12:27:32 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/10 19:54:12 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:38:41 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,4 @@ t_ft_ls_file		*sort_by_name(t_ft_ls_file *files)
 			start = NULL;
 		}
 	return (files);
-}	
+}

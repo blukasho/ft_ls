@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/21 16:50:40 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:39:48 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int					ft_read_flags(char *flags, t_ft_ls_data *data)
 		{
 			if (flags[i] == 'l')
 				data->l = 1;
-			else if(flags[i] == 'a')
+			else if (flags[i] == 'a')
 				data->a = 1;
 			else if (flags[i] == 'r')
 				data->r = 1;
@@ -79,7 +79,7 @@ t_ft_ls_data		*ft_read_args(int ar, char **av)
 	i = -1;
 	data = get_t_ft_ls_data();
 	if (*av && ar == 1 && !ft_strcmp(*av, "--"))
-		return(add_dir(".", data));
+		return (add_dir(".", data));
 	if (*av && !ft_read_flags(av[0], data))
 		return (clear_t_ft_ls_data(data));
 	else

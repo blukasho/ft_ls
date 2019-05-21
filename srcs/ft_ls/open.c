@@ -6,16 +6,16 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 14:15:57 by blukasho          #+#    #+#             */
-/*   Updated: 2019/03/23 22:14:01 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:35:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-DIR			*ft_open_dir(char *path)
+DIR		*ft_open_dir(char *path)
 {
-	DIR		*d;
-	
+	DIR	*d;
+
 	d = opendir(path);
 	return (d);
 }

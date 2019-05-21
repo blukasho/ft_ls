@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/09 13:44:03 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/21 16:50:40 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:39:11 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_ft_ls_file		*read_file(char *file_name, char *path)
 		return (parse_lstat_struct(&sb, file));
 	else
 		clear_t_ft_ls_files(file);
-	return(NULL);
+	return (NULL);
 }
 
 t_ft_ls_file		*read_file_link(char *file_name, char *path)
@@ -60,5 +60,5 @@ t_ft_ls_file		*read_file_link(char *file_name, char *path)
 		return (parse_lstat_struct(&sb, file));
 	else
 		clear_t_ft_ls_files(file);
-	return(NULL);
+	return (NULL);
 }

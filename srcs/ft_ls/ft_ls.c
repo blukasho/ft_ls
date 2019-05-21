@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 13:59:54 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/10 20:01:41 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:31:24 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int					ft_ls(int argc, char **argv)
 	t_ft_ls_data	*data;
 	t_ft_ls_file	*files;
 
-	if((data = ft_read_args(argc, argv)))
+	if ((data = ft_read_args(argc, argv)))
 	{
 		data->files = sort(data->files, data);
 		files = data->files;

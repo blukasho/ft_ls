@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/21 16:50:40 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:29:48 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ typedef struct				s_print
 unsigned char				get_file_type(struct stat *sb);
 
 char						*add_path_to_file(char *path, char *file);
-char						*get_file_permissions(mode_t perm, t_ft_ls_file *file);
+char						*get_file_permissions(mode_t perm,
+							t_ft_ls_file *file);
 char						*get_p_filesize(t_ft_ls_file *files);
 char						*get_p_hardlinks(t_ft_ls_file *files);
 char						*get_p_username(t_ft_ls_file *files);
@@ -89,11 +90,14 @@ t_ft_ls_file				*sort_by_time(t_ft_ls_file *files);
 t_ft_ls_file				*sort_by_name(t_ft_ls_file *files);
 t_ft_ls_file				*sort(t_ft_ls_file *file, t_ft_ls_data *data);
 t_ft_ls_file				*split_head_files(t_ft_ls_file *files);
-t_ft_ls_file				*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file);
+t_ft_ls_file				*parse_lstat_struct(struct stat *sb,
+							t_ft_ls_file *file);
 t_ft_ls_file				*read_file_link(char *file_name, char *path);
 t_ft_ls_file				*read_file(char *file_name, char *path);
-t_ft_ls_file				*read_dir(DIR *d, char *path, t_ft_ls_data *data);
-t_ft_ls_file				*add_file(t_ft_ls_file *files, char *file, char *path);
+t_ft_ls_file				*read_dir(DIR *d, char *path,
+							t_ft_ls_data *data);
+t_ft_ls_file				*add_file(t_ft_ls_file *files,
+							char *file, char *path);
 t_ft_ls_file				*get_t_ft_ls_file(t_ft_ls_file *files, char *s);
 t_ft_ls_data				*ft_read_args(int ar, char **av);
 t_ft_ls_data				*get_t_ft_ls_data(void);
@@ -102,7 +106,8 @@ int							check_ea(char *filename);
 int							check_acl(char *filename);
 int							has_dir(t_ft_ls_file *files);
 int							check_permission_denied(char *name);
-int							print_dir(t_ft_ls_data *data, t_ft_ls_file *files, char *dirname);
+int							print_dir(t_ft_ls_data *data,
+							t_ft_ls_file *files, char *dirname);
 int							print_normal_format_files(t_ft_ls_file *files);
 int							print_long_format_dir(t_ft_ls_file *files);
 int							print_long_format_files(t_ft_ls_file *files);
@@ -113,7 +118,8 @@ int							is_dir(char *dirname);
 int							is_file(char *filename);
 int							is_link(char *name);
 int							check_slash(char *path);
-int							standart_output_file(t_ft_ls_data *data, char *file);
+int							standart_output_file(t_ft_ls_data *data,
+							char *file);
 int							standart_output_dir(t_ft_ls_data *data, char *dir);
 int							ft_read_flags(char *flags, t_ft_ls_data *data);
 int							error_permission_denied(char *dir);

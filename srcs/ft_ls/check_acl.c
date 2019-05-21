@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 13:01:10 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/20 16:48:55 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 18:31:06 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int			check_acl(char *f)
 {
 	acl_t	acl;
+
 	if ((acl = acl_get_file(f, ACL_TYPE_EXTENDED)))
 	{
 		acl_free(acl);
