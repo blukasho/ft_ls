@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 15:01:04 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/07 17:44:29 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 16:50:40 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ static t_ft_ls_data	*add_dir(char *file, t_ft_ls_data *data)
 {
 	t_ft_ls_file	*new_file;
 
-	new_file = read_file(file, NULL);
+	if (is_link(file) && !data->l)
+		new_file = read_file_link(file, NULL);
+	else
+		new_file = read_file(file, NULL);
 	if (new_file)
 		data->files = add_new_file(data->files, new_file);
 	else

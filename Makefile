@@ -45,7 +45,7 @@ SRCS_FT_LS = clear.c error.c init_structs.c open.c print.c read_args.c\
 			 print_long_format_files.c print_long_format_dir.c total.c\
 			 sort_by_reverse.c check_permission_denied.c print_only_files.c\
 			 print_normal_format_files.c print_dir.c has_dir.c check_ea.c\
-			 check_acl.c
+			 check_acl.c is_link.c
 			 
 
 FT_LS = ft_ls

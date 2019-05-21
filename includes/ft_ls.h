@@ -6,7 +6,7 @@
 /*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 13:28:07 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/20 16:17:58 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 16:50:40 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ t_ft_ls_file				*sort_by_name(t_ft_ls_file *files);
 t_ft_ls_file				*sort(t_ft_ls_file *file, t_ft_ls_data *data);
 t_ft_ls_file				*split_head_files(t_ft_ls_file *files);
 t_ft_ls_file				*parse_lstat_struct(struct stat *sb, t_ft_ls_file *file);
+t_ft_ls_file				*read_file_link(char *file_name, char *path);
 t_ft_ls_file				*read_file(char *file_name, char *path);
 t_ft_ls_file				*read_dir(DIR *d, char *path, t_ft_ls_data *data);
 t_ft_ls_file				*add_file(t_ft_ls_file *files, char *file, char *path);
@@ -110,6 +111,7 @@ int							print(t_ft_ls_data *data);
 int							ft_ls(int argc, char **argv);
 int							is_dir(char *dirname);
 int							is_file(char *filename);
+int							is_link(char *name);
 int							check_slash(char *path);
 int							standart_output_file(t_ft_ls_data *data, char *file);
 int							standart_output_dir(t_ft_ls_data *data, char *dir);

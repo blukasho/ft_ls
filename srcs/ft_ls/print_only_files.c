@@ -6,7 +6,7 @@
 /*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 13:48:03 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/09 14:23:35 by blukasho         ###   ########.fr       */
+/*   Updated: 2019/05/21 17:38:37 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static t_ft_ls_file	*get_files(t_ft_ls_data *data)
 	o_files = data->files;
 	while (o_files)
 	{
-		if (!is_dir(o_files->filename))
+		if (o_files->filetype != 'd')
 		{
 			if (data->a)
 				n_files = add(n_files, read_file(o_files->filename, NULL));
